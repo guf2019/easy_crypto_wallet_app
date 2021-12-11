@@ -1,59 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#bb00ff"
     android:id="@+id/TextOr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6020cc"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="450dp"
+        android:layout_width="367dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginBottom="409dp"
         android:autoSizeTextType="none"
-        android:autoText="true"
+        android:background="@drawable/rounded_corner"
         android:gravity="center"
         android:text="@string/WelcomeText"
-        android:textColor="#F6F6F6"
-        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.409" />
 
     <Button
         android:id="@+id/ButtonCreateWallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="192dp"
+        android:layout_width="154dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="50dp"
+
+        android:background="@drawable/buttonshape"
         android:text="@string/FirstMenuCreate"
-        app:layout_constraintStart_toStartOf="@+id/ButtonImportWallet"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonImportWallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/ButtonImportWallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/FirstMenuImport"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonCreateWallet" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:text="или"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonImportWallet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonCreateWallet" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonCreateWallet"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="218dp"
+        android:layout_height="218dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+
+        android:src="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonCreateWallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="127dp"
+        android:layout_height="168dp"
+        android:shape="ring"
+        app:cardCornerRadius="580dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322"
+        app:srcCompat="@drawable/test" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">easy_crypto_wallet_app</string>
-    <string name="WelcomeText"> Привет, ты первый раз посетил наше приложение, давай создадим тебе адрес</string>
+    <string name="WelcomeText"> Привет, если ты впервые зашёл в приложение, то давай я создам тебе твой первый кошелёк. Если ты не новичок, то импортируй уже имеющийся!</string>
     <string name="FirstMenuCreate">Создать кошелек</string>
     <string name="FirstMenuImport">Импортировать кошелек</string>
 </resources>
