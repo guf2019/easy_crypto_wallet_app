@@ -13,8 +13,7 @@
         android:id="@+id/textView"
         android:layout_width="367dp"
         android:layout_height="119dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginBottom="409dp"
+        android:layout_marginBottom="304dp"
         android:autoSizeTextType="none"
         android:background="@drawable/rounded_corner"
         android:gravity="center"
@@ -23,10 +22,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/ButtonCreateWallet"
@@ -70,26 +66,10 @@
         app:layout_constraintTop_toBottomOf="@+id/ButtonCreateWallet"
         app:layout_constraintVertical_bias="1.0" />
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="218dp"
-        android:layout_height="218dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-
-        android:src="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonCreateWallet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
-
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="127dp"
-        android:layout_height="168dp"
+        android:layout_width="253dp"
+        android:layout_height="283dp"
         android:shape="ring"
         app:cardCornerRadius="580dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -97,6 +77,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.322"
-        app:srcCompat="@drawable/test" />
+        app:srcCompat="@drawable/start_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
