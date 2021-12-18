@@ -1,0 +1,4 @@
+service:
+  bip44:
+    mnemonic_phrase:
+      - http://192.168.0.103:5000/generate_mnemonic_phrase

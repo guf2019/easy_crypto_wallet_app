@@ -1,66 +1,38 @@
 package com.example.easy_crypto_wallet_app;
-import com.example.easy_crypto_wallet_app.config.*;
-import com.example.easy_crypto_wallet_app.constants.Constants;
+import com.example.easy_crypto_wallet_app.constants.ServiceConstants;
+import com.example.easy_crypto_wallet_app.common.yaml.YamlDriver;
+import com.example.easy_crypto_wallet_app.constants.ConfigConstants;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
 
-import org.json.JSONObject;
-import org.yaml.snakeyaml.Yaml;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import java.io.IOException;
+import java.net.URL;
 import java.util.Map;
 
 public class CreateWalletActivity extends AppCompatActivity {
-    private TextView MnemonicPhrase;
+    private final String YamlPath = ServiceConstants.YamlPath;
+    private final Map<String, Object> YamlConfig = new YamlDriver().YamlConverterToMap(YamlPath);
+    private TextView TextViewMnemonicPhrase = findViewById(R.id.TextViewMnemonicPhrase);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_wallet);
-        MnemonicPhrase = findViewById(R.id.MnemonicPhrase);
-        String Url = new Constants().YamlPath;
 
-        String ApiRequestMnemonicPhrase = GetApiResponseUrl(Url);
-        MnemonicPhrase.setText(GetMnemonicPhrase(ApiRequestMnemonicPhrase));
+        GetMnemonicPhrase();
     }
 
-    private String GetApiResponseUrl(String Url) {
-        Yaml yaml= new Yaml();
-        Map<String,Object> map= (Map<String, Object>) yaml.load(Url);
+    private void GetMnemonicPhrase(){
+        URL MnemonicPhraseUrlServiceEndpoint = GetMnemonicPhraseUrlServiceEndpoint();
 
-        JSONObject jsonObject=new JSONObject(map);
-        return jsonObject.toString();
     }
 
-
-    private String GetMnemonicPhrase(String url){
-        OkHttpClient client = new OkHttpClient();
-        Request req = new Request.Builder().url(url).build();
-        client.newCall(req).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {e.printStackTrace();}
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if (response.isSuccessful()){
-                    final String myResponse = response.body().string();
-
-                    CreateWalletActivity.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            return myResponse;
-                        }
-                    });
-                }
-            }
-
+    private URL GetMnemonicPhraseUrlServiceEndpoint() {
+        Map<String, Object> Bip44 = (Map<String, Object>) YamlConfig.get(ConfigConstants.Bip44);
+        if (Bip44 != null){
+            return (URL) Bip44.get(ConfigConstants.MnemonicPhrase);
+        }
+        return null;
+    }
 }

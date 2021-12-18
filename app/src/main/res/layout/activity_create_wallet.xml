@@ -8,7 +8,7 @@
     tools:context=".CreateWalletActivity">
 
     <TextView
-        android:id="@+id/MnemonicPhrase"
+        android:id="@+id/TextViewMnemonicPhrase"
         android:layout_width="171dp"
         android:layout_height="59dp"
         android:textColor="#FBFBFB"
